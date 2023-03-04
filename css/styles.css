@@ -1,0 +1,169 @@
+:root {
+  --primary-brand-color: #4d5ae5;
+  --pressed-state-color: #404bbf;
+  --headings-text-color: #2e2f42;
+  --primary-text-color: #434455;
+  --accent-color: #e7e9fc;
+  --light-backgrounds-color: #f4f4fd;
+  --main-basic-color: #ffffff;
+}
+
+/* GENERAL */
+
+body {
+  color: var(--primary-text-color);
+  background-color: var(--main-basic-color);
+}
+
+/* Вирішила використати цей селектор, тому що треба було скинути форматування посилань і контактів, але можливо це не оптимально */
+* {
+  text-decoration: none;
+  font-style: normal;
+}
+
+.list {
+  list-style: none;
+}
+
+/* Headings */
+.heading-2 {
+  color: var(--headings-text-color);
+}
+
+.heading-3 {
+  color: var(--headings-text-color);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Buttons */
+
+.btn {
+  /* Додати загальні властивості папок */
+}
+
+.btn.primary {
+  background-color: var(--primary-brand-color);
+  color: var(--main-basic-color);
+}
+
+.btn.primary:hover,
+.btn.primary:focus {
+  background-color: var(--pressed-state-color);
+}
+
+.btn.secondary {
+  background-color: var(--light-backgrounds-color);
+  color: var(--primary-brand-color);
+}
+
+.btn.secondary:hover,
+.btn.secondary:focus {
+  background-color: var(--pressed-state-color);
+  color: var(--main-basic-color);
+}
+
+/* HEADER */
+
+/* Navigation */
+
+/* Logo */
+
+.header-logo {
+  color: var(--headings-text-color);
+}
+
+.web-logo-part {
+  color: var(--primary-brand-color);
+}
+
+/* Sections */
+.nav-sections .link {
+  color: var(--headings-text-color);
+}
+
+.nav-sections .link:hover,
+.nav-sections .link:focus {
+  color: var(--pressed-state-color);
+}
+
+.nav-sections .active-link {
+  color: var(--primary-brand-color);
+}
+
+/* Contacts */
+
+.nav-contacts-mailto + li {
+  color: var(--primary-text-color);
+}
+
+/* Не впевнена, що потрібно було розділяти на класи телефон і емейл, але на всякий випадок зробила :) */
+.nav-contacts-mailto:hover,
+.nav-contacts-mailto:focus,
+.nav-contacts-tel:hover,
+.nav-contacts-tel:focus {
+  color: var(--pressed-state-color);
+}
+
+/* PAGE STUDIO*/
+
+/* Hero */
+
+.hero {
+  background-color: var(--headings-text-color);
+  color: var(--main-basic-color);
+}
+
+/* Our Features */
+
+/* Our Flow */
+
+/* Our Team */
+
+.team {
+  background-color: var(--light-backgrounds-color);
+}
+
+.team-card-content {
+  background-color: var(--main-basic-color);
+}
+
+/* PAGE PORTFOLIO*/
+
+/* Our Portrolio */
+
+/* Filters */
+
+/* Portfolio */
+
+/* FOOTER */
+
+.footer {
+  background-color: var(--headings-text-color);
+}
+
+/* Logo */
+
+.footer-logo {
+  color: var(--light-backgrounds-color);
+}
+
+.web-logo-part {
+  color: var(--primary-brand-color);
+}
+
+.footer-text {
+  color: var(--accent-color);
+}
