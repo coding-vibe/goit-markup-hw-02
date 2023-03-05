@@ -100,6 +100,10 @@ body {
 .btn.primary {
   background-color: var(--primary-brand-color);
   color: var(--main-basic-color);
+
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
 
 .btn.primary:hover,
@@ -205,6 +209,11 @@ body {
 /* Our Portrolio */
 
 /* Filters */
+
+.portfolio-filter {
+  border: 1px solid #e7e9fc;
+  border-radius: 4px;
+}
 
 /* Portfolio */
 
