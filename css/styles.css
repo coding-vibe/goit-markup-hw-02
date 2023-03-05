@@ -1,11 +1,29 @@
 :root {
+  /* Color */
   --primary-brand-color: #4d5ae5;
   --pressed-state-color: #404bbf;
-  --headings-text-color: #2e2f42;
+  --h-text-color: #2e2f42;
   --primary-text-color: #434455;
   --accent-color: #e7e9fc;
   --light-backgrounds-color: #f4f4fd;
   --main-basic-color: #ffffff;
+  /* Font */
+  --primary-font: Roboto;
+  --logo-font: Raleway;
+  --family-font: sans-serif;
+  --bold-font: 700;
+  --med-font: 500;
+  --h1-font-size: 56px;
+  --h2-font-size: 36px;
+  --h3-font-size: 20px;
+  --small-font-size: 12px;
+  --h1-line-height: 1.07;
+  --h2-line-height: 1.11;
+  --h3-line-height: 1.2;
+  --primary-line-height: 1.5;
+  --small-line-height: 1.16;
+  --primary-letter-spacing: 0.02em;
+  --small-btn-letter-spacing: 0.04em;
 }
 
 /* GENERAL */
@@ -13,10 +31,16 @@
 body {
   color: var(--primary-text-color);
   background-color: var(--main-basic-color);
+
+  font-family: var(--primary-font), var(--family-font);
+  line-height: var(--primary-line-height);
+  letter-spacing: var(--primary-letter-spacing);
 }
 
-/* Вирішила використати цей селектор, тому що треба було скинути форматування посилань і контактів, але можливо це не оптимально */
-* {
+/* Можливо в класі .link правильніше вказати color:inherit? Щоб потім окремо не прописувати. Це стосується, наприклад, розділу Портфолію на сторінці Портфоліо - я там окремо вказувала колір для p.
+Також я додала .link font-style: normal, щоб перебити курсив чи можливо краще присвоїти це тільки для тегу adress?*/
+.link,
+.active-link {
   text-decoration: none;
   font-style: normal;
 }
@@ -26,12 +50,27 @@ body {
 }
 
 /* Headings */
-.heading-2 {
-  color: var(--headings-text-color);
+.h1 {
+  font-weight: var(--bold-font);
+  font-size: var(--h1-font-size);
+  line-height: var(--h1-line-height);
 }
 
-.heading-3 {
-  color: var(--headings-text-color);
+.h2 {
+  color: var(--h-text-color);
+
+  font-weight: var(--bold-font);
+  font-size: var(--h2-font-size);
+  line-height: var(--h2-line-height);
+  text-align: center;
+}
+
+.h3 {
+  color: var(--h-text-color);
+
+  font-weight: var(--med-font);
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-line-height);
 }
 
 .visually-hidden {
@@ -51,7 +90,11 @@ body {
 /* Buttons */
 
 .btn {
-  /* Додати загальні властивості папок */
+  font-family: inherit;
+  font-weight: var(--med-font);
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: var(--small-btn-letter-spacing);
 }
 
 .btn.primary {
@@ -75,6 +118,19 @@ body {
   color: var(--main-basic-color);
 }
 
+/* General Logo styles */
+
+.logo {
+  font-family: var(--logo-font), var(--family-font);
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.web-logo-part {
+  color: var(--primary-brand-color);
+}
+
 /* HEADER */
 
 /* Navigation */
@@ -82,16 +138,17 @@ body {
 /* Logo */
 
 .header-logo {
-  color: var(--headings-text-color);
-}
-
-.web-logo-part {
-  color: var(--primary-brand-color);
+  color: var(--h-text-color);
+  line-height: 1.33;
 }
 
 /* Sections */
-.nav-sections .link {
-  color: var(--headings-text-color);
+
+.nav-sections .link,
+.nav-sections .active-link {
+  color: var(--h-text-color);
+
+  font-weight: var(--med-font);
 }
 
 .nav-sections .link:hover,
@@ -105,7 +162,8 @@ body {
 
 /* Contacts */
 
-.nav-contacts-mailto + li {
+.nav-contacts-mailto,
+.nav-contacts-tel {
   color: var(--primary-text-color);
 }
 
@@ -122,8 +180,10 @@ body {
 /* Hero */
 
 .hero {
-  background-color: var(--headings-text-color);
+  background-color: var(--h-text-color);
   color: var(--main-basic-color);
+
+  text-align: center;
 }
 
 /* Our Features */
@@ -148,20 +208,22 @@ body {
 
 /* Portfolio */
 
+.portfolio p {
+  color: var(--primary-text-color);
+}
+
 /* FOOTER */
 
 .footer {
-  background-color: var(--headings-text-color);
+  background-color: var(--h-text-color);
 }
 
 /* Logo */
 
 .footer-logo {
   color: var(--light-backgrounds-color);
-}
 
-.web-logo-part {
-  color: var(--primary-brand-color);
+  line-height: 1.17;
 }
 
 .footer-text {
