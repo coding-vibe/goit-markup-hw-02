@@ -2,26 +2,30 @@
   /* Color */
   --primary-brand-color: #4d5ae5;
   --pressed-state-color: #404bbf;
-  --h-text-color: #2e2f42;
+  --title-text-color: #2e2f42;
   --primary-text-color: #434455;
   --accent-color: #e7e9fc;
   --light-backgrounds-color: #f4f4fd;
   --main-basic-color: #ffffff;
   /* Font */
+  /* General */
   --primary-font: Roboto;
   --logo-font: Raleway;
   --family-font: sans-serif;
-  --bold-font: 700;
   --med-font: 500;
-  --h1-font-size: 56px;
-  --h2-font-size: 36px;
-  --h3-font-size: 20px;
+  --bold-font: 700;
+  /* Size */
+  --main-title-font-size: 56px;
+  --section-title-font-size: 36px;
+  --sub-title-font-size: 20px;
   --small-font-size: 12px;
-  --h1-line-height: 1.07;
-  --h2-line-height: 1.11;
-  --h3-line-height: 1.2;
+  /* Line height */
+  --main-title-line-height: 1.07;
+  --section-title-line-height: 1.11;
+  --sub-title-line-height: 1.2;
   --primary-line-height: 1.5;
   --small-line-height: 1.16;
+  /* Letter spacing */
   --primary-letter-spacing: 0.02em;
   --small-btn-letter-spacing: 0.04em;
 }
@@ -37,40 +41,43 @@ body {
   letter-spacing: var(--primary-letter-spacing);
 }
 
-/* Можливо в класі .link правильніше вказати color:inherit? Щоб потім окремо не прописувати. Це стосується, наприклад, розділу Портфолію на сторінці Портфоліо - я там окремо вказувала колір для p.
-Також я додала .link font-style: normal, щоб перебити курсив чи можливо краще присвоїти це тільки для тегу adress?*/
+address {
+  font-style: normal;
+}
+
 .link,
 .active-link {
   text-decoration: none;
-  font-style: normal;
+  color: inherit;
 }
 
 .list {
   list-style: none;
 }
 
-/* Headings */
-.h1 {
+/* Titles */
+
+.main-title {
   font-weight: var(--bold-font);
-  font-size: var(--h1-font-size);
-  line-height: var(--h1-line-height);
+  font-size: var(--main-title-font-size);
+  line-height: var(--main-title-line-height);
 }
 
-.h2 {
-  color: var(--h-text-color);
+.section-title {
+  color: var(--title-text-color);
 
   font-weight: var(--bold-font);
-  font-size: var(--h2-font-size);
-  line-height: var(--h2-line-height);
+  font-size: var(--section-title-font-size);
+  line-height: var(--section-title-line-height);
   text-align: center;
 }
 
-.h3 {
-  color: var(--h-text-color);
+.sub-title {
+  color: var(--title-text-color);
 
   font-weight: var(--med-font);
-  font-size: var(--h3-font-size);
-  line-height: var(--h3-line-height);
+  font-size: var(--sub-title-font-size);
+  line-height: var(--sub-title-line-height);
 }
 
 .visually-hidden {
@@ -95,6 +102,8 @@ body {
   font-size: inherit;
   line-height: inherit;
   letter-spacing: var(--small-btn-letter-spacing);
+
+  cursor: pointer;
 }
 
 .btn.primary {
@@ -104,6 +113,7 @@ body {
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  padding: 16px 32px 16px 32px;
 }
 
 .btn.primary:hover,
@@ -114,6 +124,8 @@ body {
 .btn.secondary {
   background-color: var(--light-backgrounds-color);
   color: var(--primary-brand-color);
+
+  padding: 12px 24px 12px 24px;
 }
 
 .btn.secondary:hover,
@@ -142,40 +154,39 @@ body {
 /* Logo */
 
 .header-logo {
-  color: var(--h-text-color);
+  color: var(--title-text-color);
   line-height: 1.33;
 }
 
 /* Sections */
 
-.nav-sections .link,
-.nav-sections .active-link {
-  color: var(--h-text-color);
+.header-menu .link,
+.header-menu .active-link {
+  color: var(--title-text-color);
 
   font-weight: var(--med-font);
 }
 
-.nav-sections .link:hover,
-.nav-sections .link:focus {
+.header-menu .link:hover,
+.header-menu .link:focus {
   color: var(--pressed-state-color);
 }
 
-.nav-sections .active-link {
+.header-menu .active-link {
   color: var(--primary-brand-color);
 }
 
 /* Contacts */
 
-.nav-contacts-mailto,
-.nav-contacts-tel {
+.header-contacts-mailto,
+.header-contacts-tel {
   color: var(--primary-text-color);
 }
 
-/* Не впевнена, що потрібно було розділяти на класи телефон і емейл, але на всякий випадок зробила :) */
-.nav-contacts-mailto:hover,
-.nav-contacts-mailto:focus,
-.nav-contacts-tel:hover,
-.nav-contacts-tel:focus {
+.header-contacts-mailto:hover,
+.header-contacts-mailto:focus,
+.header-contacts-tel:hover,
+.header-contacts-tel:focus {
   color: var(--pressed-state-color);
 }
 
@@ -184,7 +195,7 @@ body {
 /* Hero */
 
 .hero {
-  background-color: var(--h-text-color);
+  background-color: var(--title-text-color);
   color: var(--main-basic-color);
 
   text-align: center;
@@ -217,14 +228,10 @@ body {
 
 /* Portfolio */
 
-.portfolio p {
-  color: var(--primary-text-color);
-}
-
 /* FOOTER */
 
 .footer {
-  background-color: var(--h-text-color);
+  background-color: var(--title-text-color);
 }
 
 /* Logo */
