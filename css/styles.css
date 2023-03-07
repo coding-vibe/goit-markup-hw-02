@@ -173,7 +173,7 @@ address {
 }
 
 .header-menu .active-link {
-  color: var(--primary-brand-color);
+  color: var(--pressed-state-color);
 }
 
 /* Contacts */
